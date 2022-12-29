@@ -1,0 +1,12 @@
+<launch>
+  <arg name="input_frame" default="pandar"/>
+  <arg name="output_frame" default="viewer"/>
+  <arg name="sequence_interval" default="20"/>
+
+  <node pkg="trajectory_broadcaster" exec="trajectory_broadcaster" name="trajectory_broadcaster" output="screen">
+    <param name="input_frame" value="$(var input_frame)" />
+    <param name="output_frame" value="$(var output_frame)" />
+    <param name="sequence_interval" value="$(var sequence_interval)" />
+    <param name="target_poses" value="{{0, 0, 0, 0, 0, 0}, {-15, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}" />
+  </node>
+</launch>
